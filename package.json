@@ -6,7 +6,7 @@
 	"scripts": {
 		"dev": "ts-node-dev --ignore-watch node_modules app.ts",
 		"tsc": "tsc",
-		"test": "jest --watch"
+		"test": "jest"
 	},
 	"author": "",
 	"license": "ISC",
