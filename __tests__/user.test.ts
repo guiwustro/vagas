@@ -88,7 +88,6 @@ describe("/users", () => {
         const userLoginResponse = await request(app)
             .post("/auth/login")
             .send(mockedUserLogin);
-        console.log(userLoginResponse.body)
         const response = await request(app)
             .put("/users/2")
             .set("Authorization", `Bearer ${userLoginResponse.body.token}`)
@@ -141,27 +140,5 @@ describe("/users", () => {
         expect(resAllUsers.body).toHaveLength(2);
 
     });
-    // test("PUT /users/:id -  should be able to update an user", async () => {
-    //     const newValuesUser = {
-    //         name: "Joao",
-    //     };
-    //     const userLoginResponse = await request(app)
-    //         .post("/auth/login")
-    //         .send(mockedUserLogin);
 
-    //     const response = await request(app)
-    //         .put("/users/2")
-    //         .set("Authorization", `Bearer ${userLoginResponse.body.token}`)
-    //         .send(newValuesUser);
-    //     console.log(data)
-
-    //     expect(response.body).toHaveProperty("id");
-    //     expect(response.body).toHaveProperty("name");
-    //     expect(response.body).toHaveProperty("isAdmin");
-    //     expect(response.body.name).toEqual("Joao");
-
-    //     expect(response.body).toHaveProperty("job");
-    //     expect(response.body).not.toHaveProperty("password");
-    //     expect(response.status).toBe(200);
-    // });
 });

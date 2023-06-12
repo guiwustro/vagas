@@ -16,7 +16,6 @@ export const updateUser = (req: Request, res: Response) => {
     data[userIndex] = { ...data[userIndex], ...newInfo }
     let userCopy = { ...data[userIndex] } as Partial<IFakeData>
     delete userCopy.password
-    console.log(userCopy)
 
     return res.status(200).json(userCopy)
 
